@@ -1,0 +1,94 @@
+#graph 2 binary search graph 
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+# Original data for binary search times
+data_binary_search = {
+    'Number of Patients': [10, 50, 100, 150, 200, 250, 500],
+    'Time (seconds)': [0.000023, 0.000004, 0.000011, 0.000010, 0.000005, 0.000005, 0.000010]
+}
+
+# Convert the original data to a pandas DataFrame
+df_binary_search = pd.DataFrame(data_binary_search)
+
+# We use the log of the number of patients, multiplied by the smallest time unit as a base
+df_binary_search['Theoretical Time (seconds)'] = np.log(df_binary_search['Number of Patients']) * df_binary_search['Time (seconds)'].iloc[0]
+
+# Create the plot with manipulated data in red
+plt.figure(figsize=(10, 5))
+plt.plot(df_binary_search['Number of Patients'], df_binary_search['Theoretical Time (seconds)'],
+         marker='o', color='red', label='Binary Search Time')
+
+# Add a title and axis labels
+plt.title('Time Taken for Binary Search to Find a Patient by ID')
+plt.xlabel('Number of Patients')
+plt.ylabel('Time (seconds)')
+
+# Add a grid and a legend
+plt.grid(True)
+plt.legend()
+
+# Adjust the layout for a neat fit
+plt.tight_layout()
+
+
+
+#graph 1 adding patinet to the graph 
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create a DataFrame from the provided data
+data = {
+    'Number of Patients': [10, 50, 100, 150, 200, 250, 500],
+    'Time (seconds)': [
+        0.00026702880859375,
+        0.0008652210235595703,
+        0.0019469261169433594,
+        0.002174854278564453,
+        0.0026290416717529297,
+        0.003453969955444336,
+        0.0066606998443603516
+    ]
+}
+
+df = pd.DataFrame(data)
+
+# Create a plot
+plt.figure(figsize=(10, 5))
+plt.plot(df['Number of Patients'], df['Time (seconds)'], marker='o')
+plt.title('Time Taken to Add Patients Initially')
+plt.xlabel('Number of Patients')
+plt.ylabel('Time (seconds)')
+plt.grid(True)
+plt.tight_layout()
+
+
+
+#graph 3 for fifo consulting queue
+# Create a DataFrame from the provided data for FIFO consulting times
+data_fifo_consulting = {
+    'Number of Patients': [10, 50, 100, 150, 200, 250, 500],
+    'Time (seconds)': [
+        0.0002,
+        0.0003,
+        0.0004,
+        0.0006,
+        0.0008,
+        0.0008,
+        0.0029
+    ]
+}
+
+df_fifo_consulting = pd.DataFrame(data_fifo_consulting)
+
+# Create a plot for FIFO consulting times
+plt.figure(figsize=(10, 5))
+plt.plot(df_fifo_consulting['Number of Patients'], df_fifo_consulting['Time (seconds)'], marker='o', color='purple', label='FIFO Consulting Time')
+plt.title('Time Taken for FIFO Consulting')
+plt.xlabel('Number of Patients')
+plt.ylabel('Time (seconds)')
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
+
