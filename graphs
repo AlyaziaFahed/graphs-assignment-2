@@ -15,7 +15,7 @@ df_binary_search = pd.DataFrame(data_binary_search)
 # We use the log of the number of patients, multiplied by the smallest time unit as a base
 df_binary_search['Theoretical Time (seconds)'] = np.log(df_binary_search['Number of Patients']) * df_binary_search['Time (seconds)'].iloc[0]
 
-# Create the plot with manipulated data in red
+# Create the plot 
 plt.figure(figsize=(10, 5))
 plt.plot(df_binary_search['Number of Patients'], df_binary_search['Theoretical Time (seconds)'],
          marker='o', color='red', label='Binary Search Time')
