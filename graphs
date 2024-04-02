@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-# Original data for binary search times
+# Original data for binary search times,
 data_binary_search = {
     'Number of Patients': [10, 50, 100, 150, 200, 250, 500],
     'Time (seconds)': [0.000023, 0.000004, 0.000011, 0.000010, 0.000005, 0.000005, 0.000010]
